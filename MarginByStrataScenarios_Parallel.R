@@ -63,6 +63,11 @@ range(RESULTS$Results3$AccRatio)
 #lapply(RESULTS$Results1[c("TX_hat_Imp","Alpha_hat_Imp","Gamma_hat_Imp")], function(x) round(colMeans(x),2))
 #lapply(RESULTS$Results1[c("SE_TX_hat_Imp","SE_Alpha_hat_Imp","SE_Gamma_hat_Imp")], function(x) round(sqrt(colMeans(x^2)),2))
 
-
+sd(RESULTS$Results2$TX_hat_Imp)
+sd(RESULTS$Results3$TX_hat_Imp)
+apply(RESULTS$Results2$Alpha_hat_Imp,2,sd)
+apply(RESULTS$Results3$Alpha_hat_Imp,2,sd)
+apply(RESULTS$Results2$Gamma_hat_Imp,2,sd)
+apply(RESULTS$Results3$Gamma_hat_Imp,2,sd)
 
 

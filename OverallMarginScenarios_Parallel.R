@@ -26,7 +26,7 @@ gamma <- list(gamma0=c(-0.25),gamma1=c(0,0.1,0.3),gamma2=c(-1.1)) #Nonresponse R
 #alpha <- list(alpha0=c(0.15),alpha1=c(0,-0.45,-0.15)) #X1|Y1
 #gamma <- list(gamma0=c(-1),gamma1=c(0,-0.6,1.4),gamma2=c(-0.2)) #Nonresponse R|Y1,X1
 
-n_iter <- 10000; burn_in <- n_iter/2; nImputations <- 50; nRuns <- 100
+n_iter <- 10000; burn_in <- n_iter/2; nImputations <- 50; nRuns <- 10
 no_cores <- detectCores()# - 1
 cl <- makeCluster(no_cores)
 registerDoParallel(cl)
@@ -64,5 +64,15 @@ range(RESULTS$Results3$AccRatio)
 
 
 
+sd(RESULTS$Results2$TX_hat_Imp)
+sd(RESULTS$Results3$TX_hat_Imp)
+apply(RESULTS$Results2$Alpha_hat_Imp,2,sd)
+apply(RESULTS$Results3$Alpha_hat_Imp,2,sd)
+apply(RESULTS$Results2$Gamma_hat_Imp,2,sd)
+apply(RESULTS$Results3$Gamma_hat_Imp,2,sd)
+
+
+sd(RESULTS$Results6$TX_hat_Imp) #621.5362 for scenario 4
+sd(RESULTS$Results5$TX_hat_Imp) #2131.433 for scenario 4
 
 
